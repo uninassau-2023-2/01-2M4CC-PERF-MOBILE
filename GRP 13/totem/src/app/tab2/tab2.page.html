@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Atendente </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content class="senha-chamada">
+      <ion-label>{{ senhaChamada }}</ion-label>
+    </ion-card-content>
+
+    <ion-card-content>
+      <ion-button expand="block" (click)="chamarProximaSenha()"
+        >Chamar próximo</ion-button
+      >
+    </ion-card-content>
+  </ion-card>
+</ion-content>
