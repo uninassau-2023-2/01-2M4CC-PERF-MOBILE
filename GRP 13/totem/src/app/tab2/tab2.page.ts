@@ -1,3 +1,5 @@
+// tab2.page.ts
+
 import { Component } from '@angular/core';
 import { SenhasService } from '../services/senhas.service';
 
@@ -8,22 +10,26 @@ import { SenhasService } from '../services/senhas.service';
 })
 export class Tab2Page {
   senhaChamada: string = 'Nenhuma senha disponível';
+  ultimasSenhasChamadas: string[] = [];
 
   constructor(public senhasService: SenhasService) {}
 
-  chamarProximaSenha() {
-    const tipoSenhas = ['SP', 'SE', 'SG'];
-
-    for (const tipoSenha of tipoSenhas) {
-      if (this.senhasService.senhasArray[tipoSenha].length > 0) {
-        const proximaSenha = this.senhasService.senhasArray[tipoSenha].shift();
-        if (proximaSenha !== undefined) {
+  chamarProximaSenhaPrioridade() {
+    this.senhasService.chamarProximaSenhaPrioridade().subscribe(
+      (proximaSenha) => {
+        if (proximaSenha) {
           this.senhaChamada = proximaSenha;
-          return;
+        } else {
+          this.senhaChamada = 'Nenhuma senha disponível';
         }
+      },
+      (erro) => {
+        console.error(
+          'Erro ao chamar a próxima senha do banco de dados:',
+          erro
+        );
+        this.senhaChamada = 'Nenhuma senha disponível';
       }
-    }
-
-    this.senhaChamada = 'Nenhuma senha disponível';
+    );
   }
 }

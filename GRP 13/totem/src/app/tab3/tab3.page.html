@@ -5,24 +5,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- Card para exibir o relatório de senhas -->
   <ion-card>
     <ion-card-content>
+      <ion-button (click)="atualizarRelatorio()"
+        >Atualizar Relatório</ion-button
+      >
       <ion-list>
-        <ion-item>
-          <ion-label>Senhas gerais: {{ senhasService.senhasGeral }}</ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label
-            >Senhas prioritárias: {{ senhasService.senhasPrior }}</ion-label
-          >
-        </ion-item>
-        <ion-item>
-          <ion-label
-            >Senhas de exame: {{ senhasService.senhasExame }}</ion-label
-          >
+        <ion-item *ngFor="let tipoSenha of informacoesRelatorio | keyvalue">
+          <ion-label>{{ tipoSenha.key }}: {{ tipoSenha.value }}</ion-label>
         </ion-item>
       </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-button (click)="limparTabelaSenhas()"
+        >Limpar Tabela de Senhas</ion-button
+      >
     </ion-card-content>
   </ion-card>
 </ion-content>

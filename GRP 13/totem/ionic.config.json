@@ -1,7 +1,7 @@
 {
-  "name": "lista3",
+  "name": "totem",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
