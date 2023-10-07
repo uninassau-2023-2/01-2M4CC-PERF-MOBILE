@@ -12,28 +12,26 @@
 
 1. Certifique-se de ter o MySQL instalado em sua máquina.
 
-2. Crie um novo banco de dados com o nome `totem_db`:
+2. Crie e use um novo banco de dados com o nome `totem_db`:
 
    ```sql
    CREATE DATABASE totem_db;
+   USE totem_db
    ```
    
-3. Use o banco de dados `totem_db`:
+3. Execute o seguinte comando SQL para criar a tabela necessária:
 
-	```sql
-	USE totem_db;
-	``` 
-4. Execute o seguinte comando SQL para criar a tabela necessária:
-
-	``` CREATE TABLE senhas (
-	senha VARCHAR(255) PRIMARY KEY,
-	tipo_senha VARCHAR(2) NOT NULL,
-	prioridade INT NOT NULL,
-	data_chamada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-	status ENUM('ativa', 'excluída') DEFAULT 'ativa'
-	);
-	``` 
-5. Lembre de substituir o usuário do MySQL em totem/backend/server.js
+   ```sql
+   CREATE TABLE senhas (
+   senha VARCHAR(255) PRIMARY KEY,
+   tipo_senha VARCHAR(2) NOT NULL,
+   prioridade INT NOT NULL,
+   data_chamada TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+   status ENUM('ativa', 'excluída') DEFAULT 'ativa'
+   );
+   ```
+   
+4. Lembre de substituir o usuário do MySQL em totem/backend/server.js
 
    
    
