@@ -1,0 +1,27 @@
+<ion-card>
+  <ion-card-header>
+    <ion-input readonly="true" label="Senha: " [value]="senhasService.inputNovaSenha"></ion-input>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-button expand="block" (click)="senhasService.novaSenha('SG')">Senha geral</ion-button>
+    <ion-button expand="block" (click)="senhasService.novaSenha('SP')">Senha Prioritária</ion-button>
+    <ion-button expand="block" (click)="senhasService.novaSenha('SE')">Senha Exame</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    Histórico:
+  </ion-card-header>
+
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+  <ion-item></ion-item>
+
+</ion-card>
