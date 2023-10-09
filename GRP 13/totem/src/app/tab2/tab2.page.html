@@ -1,19 +1,43 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Atendente</ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true">
   <ion-card>
-    <ion-card-content class="senha-chamada">
-      <ion-label>{{ senhaChamada }}</ion-label>
-    </ion-card-content>
+    <ion-card-header>
+      <ion-card-title>Chamada de Senhas</ion-card-title>
+      <ion-card-subtitle>
+        Por favor, solicite a senha subsequente com base na prioridade
+        estabelecida.
+      </ion-card-subtitle>
+    </ion-card-header>
 
     <ion-card-content>
-      <ion-button expand="block" (click)="chamarProximaSenhaPrioridade()">
-        Chamar próximo
-      </ion-button>
+      <ion-grid>
+        <ion-col>
+          <ion-row class="ion-justify-content-center">
+            <ion-input
+              class="senha"
+              fill="outline"
+              readonly="true"
+              value="{{senhaChamada}}"
+            >
+            </ion-input>
+          </ion-row>
+          <ion-row class="ion-justify-content-center"
+            ><ion-button
+              shape="round"
+              expand="block"
+              (click)="chamarProximaSenhaPrioridade()"
+            >
+              <ion-icon
+                class="button-icon"
+                name="megaphone"
+                aria-hidden="true"
+              ></ion-icon>
+              Chamar
+            </ion-button>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>
