@@ -36,7 +36,7 @@
         <ion-label>Senhas já emitidas:</ion-label>
         <ion-list> 
           <ion-item class="info-date" *ngFor="let senha of senhasService.senhasArray['SE']">
-  
+            <!-- Não conseguimos implementar de forma 100% funcional nem a hora de saída, nem o guiche -->
           - Senha: {{ senha.senhaI }}, Emitida em: {{ senha.hora }}, Data: {{ senha.data }}
           </ion-item>
           <ion-item class="info-date" *ngFor="let senha of senhasService.senhasArray['SG']">

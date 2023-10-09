@@ -40,12 +40,8 @@
       <ion-item class="quadrado">
         <ion-label>
           <h2 class="titulo">Ultimas senhas chamadas</h2>
-          <p class="par"></p>
-          <p class="par"></p>
-          <p class="par"></p>
-          <p class="par"></p>
-          <p class="par"></p>
-
+          <p class="par" *ngFor="let senha of senhasService.mostrar">{{ senha }}</p>
+          <!-- Conseguimos fazer a ordem, mas não soubemos fazer a exibição na tela de últimas chamadas -->
         </ion-label>
       </ion-item>
 
