@@ -1,0 +1,73 @@
+ion-content.tudo {
+    --background:#878681;
+}
+
+.custom-ion-card {
+    left: 30%;
+    position: relative;
+    align-self: flex-start;
+    background-color: red;
+    text-align: center;
+    justify-content: flex-start;
+    width: 40%;
+    border-radius: 10px;
+
+
+}
+
+.cor1 {
+    color: white;
+}
+
+.cabecario {
+    text-align: center;
+}
+
+.custom-ion-card2 {
+    background-color:red;
+    width: 40%;
+    top: 70%;
+    right: 20%;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.custom-ion-card3 {
+    background-color: #b8b814;
+    border-radius: 10px;
+    width: 40%;
+    text-align: center;
+    left: 133%;
+    top: 70%;
+}
+
+.lista {
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+
+
+} 
+.list-md{
+    border-radius: 20px;
+}
+.titulo{
+    font-size: 40px;
+    color: white;
+    
+}
+.par{
+   background-color: gray;
+    font-size: 20px;
+    text-align: center;
+    padding: 5px;
+    color: black;
+    border-radius: 20px;
+} 
+.quadrado{
+    border-radius: 20px;
+}
