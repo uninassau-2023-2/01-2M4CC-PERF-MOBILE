@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Relatórios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-label>Relatório</ion-label>
+        <ion-item class="qtd-senhas">Senhas Emitidas: {{ senhasService.senhasTotal }}</ion-item>
+        <ion-item class="qtd-senhas">Senhas Geral: {{ senhasService.senhasGeral }}</ion-item>
+        <ion-item class="qtd-senhas">Senhas Prioritárias: {{ senhasService.senhasPrior }}</ion-item>
+        <ion-item class="qtd-senhas">Senhas Exames: {{ senhasService.senhasExame }}</ion-item>
+        <ion-item class="qtd-senhas">Senhas Atendidas: {{senhasService.senhasAtendidas}}</ion-item>        
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-label>Data e Hora de emissão das senhas:</ion-label>
+    <ion-list>
+      <ion-item class="info-date" *ngFor="let senha of senhasService.senhasArray['SG']">
+        {{ senha.senha }} - Emitida em: {{ senhasService.getSenhaData('SG', senha.senha) | date: 'dd/MM/yyyy HH:mm:ss' }}
+      </ion-item>
+      <ion-item class="info-date" *ngFor="let senha of senhasService.senhasArray['SP']">
+        {{ senha.senha }} - Emitida em: {{ senhasService.getSenhaData('SP', senha.senha) | date: 'dd/MM/yyyy HH:mm:ss' }}
+      </ion-item>
+      <ion-item class="info-date" *ngFor="let senha of senhasService.senhasArray['SE']">
+        {{ senha.senha }} - Emitida em: {{ senhasService.getSenhaData('SE', senha.senha) | date: 'dd/MM/yyyy HH:mm:ss' }}
+      </ion-item>      
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+</ion-content>
