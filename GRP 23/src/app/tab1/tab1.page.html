@@ -1,3 +1,4 @@
+<ion-content>
 <ion-card>
 
   <ion-card-header>
@@ -5,9 +6,46 @@
   </ion-card-header>
 
 <ion-card-content>
-  <ion-button expand="block" (click)="senhasService.novaSenha('SG')">Senha Geral</ion-button>
-  <ion-button expand="block" (click)="senhasService.novaSenha('SP')">Senha Prioritária</ion-button>
-  <ion-button expand="block" (click)="senhasService.novaSenha('SE')">Senha Exame</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SG')" color="primary" >Senha Geral</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SP')" color="success">Senha Prioritária</ion-button>
+  <ion-button expand="block" (click)="senhasService.novaSenha('SE')" color="danger">Senha Exame</ion-button>
 </ion-card-content>
 
+  
 </ion-card>
+
+<ion-card>
+<ion-list>
+    <ion-item style="display: flex; justify-content: center;">
+      {{senhasService.inputNovaSenha}}
+    </ion-item>
+  </ion-list>
+</ion-card>
+
+
+  <ion-list>
+    <ion-item class="caixa">
+      <ion-label>
+        <h2 class="title"> Ultimas senhas chamadas </h2>
+        <p class="par" *ngFor="let senha of senhasService.mostrar">{{ senha }}</p>
+        <!-- Conseguimos fazer a ordem, mas não soubemos fazer a exibição na tela de últimas chamadas -->
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!--<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-label>Ordem de atendimento</ion-label>
+      <ion-item>Senhas emetidas: {{senhasService.currentDate | date:'yyyy-MM-dd'}}</ion-item>
+      <ion-item>Senhas Geral: {{senhasService.inputNovaSenha}}</ion-item>
+      <ion-item>Senhas Prioritárias: {{senhasService.inputNovaSenha}}</ion-item>
+      <ion-item>Senhas Exame: {{senhasService.inputNovaSenha}}</ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+</ion-card>
+-->
