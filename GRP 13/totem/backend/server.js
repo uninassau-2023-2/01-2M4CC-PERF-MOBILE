@@ -9,9 +9,10 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-  host: "localhost",
-  user: "vsdutraa",
-  password: "",
+  host: "172.17.0.1",
+  user: "aula",
+  password: "aula",
+  port: 33062,
   database: "totem_db",
 });
 
@@ -116,6 +117,7 @@ app.delete("/limpar-tabela-senhas", (req, res) => {
 });
 
 const port = process.env.PORT || 3000;
-app.listen(port, () => {
+const hostname = '0.0.0.0';
+app.listen(hostname, port, () => {
   console.log(`Servidor em execução na porta ${port}`);
 });
