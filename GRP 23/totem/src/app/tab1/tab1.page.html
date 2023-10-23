@@ -2,7 +2,7 @@
 <ion-card>
 
   <ion-card-header>
-    <ion-input readonly="true" label="Senha: " [(ngModel)]="senhasService.inputNovaSenha" ></ion-input>
+    <ion-input readonly="true" label="Senha: " [(ngModel)]="senhasService.inputSenha" ></ion-input>
   </ion-card-header>
 
 <ion-card-content>
@@ -11,13 +11,13 @@
   <ion-button expand="block" (click)="senhasService.novaSenha('SE')" color="danger">Senha Exame</ion-button>
 </ion-card-content>
 
-  
+
 </ion-card>
 
 <ion-card>
 <ion-list>
     <ion-item style="display: flex; justify-content: center;">
-      {{senhasService.inputNovaSenha}}
+      {{senhasService.inputSenha}}
     </ion-item>
   </ion-list>
 </ion-card>
