@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Atendente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-label>Clique para chamar a próxima senha</ion-label>
+      <ion-button class="custom-button" (click)="chamarProximaSenha()">Chamar Próxima Senha</ion-button>
+    </ion-card-header>
+  </ion-card>
+
+    <ion-card>
+      <ion-card-content class="custom-totem">
+        <div class="image-totem">
+          <img [src]="totemSenhas" alt="Totem de Senhas" width="100">
+        </div>
+        <p>Este aplicativo foi desenvolvido como parte da avaliação para a disciplina de Desenvolvimento Móvel.</p>
+      </ion-card-content>
+    </ion-card>
+    
+    <h2 class="title-h2">Contribuíram com este projeto:</h2>
+    <ion-grid>
+      <ion-row>
+        <ion-col *ngFor="let person of profileData">
+          <div class="person-box">
+            <img class="rounded-image" [src]="person.photo" alt="{{ person.name }}" width="100" height="100">
+            <p class="person-name">{{ person.name }}</p>
+            <div class="person-id">{{ person.id }}</div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid> 
+</ion-content>
