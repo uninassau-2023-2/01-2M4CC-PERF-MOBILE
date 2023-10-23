@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="impressao-card">
+    <ion-card-header>
+      <ion-card-title>Impressão de Senha</ion-card-title>
+      <ion-card-subtitle>Escolha seu tipo de atendimento.</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row>
+            <ion-input
+              class="senha"
+              fill="outline"
+              readonly="true"
+              value="{{senhasService.inputNovaSenha}}"
+            ></ion-input>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <app-senha-button
+              label="Senha Geral"
+              (senhaClick)="senhasService.novaSenha('SG', 2)"
+            ></app-senha-button>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <app-senha-button
+              label="Senha Prioritária"
+              (senhaClick)="senhasService.novaSenha('SP', 1)"
+            ></app-senha-button>
+          </ion-row>
+          <ion-row class="ion-justify-content-center">
+            <app-senha-button
+              label="Senha Exame"
+              (senhaClick)="senhasService.novaSenha('SE', 3)"
+            ></app-senha-button>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
