@@ -8,3 +8,7 @@
 * Rhyan Carlos - 01539352
 * Rodin Sarmento - 01507133
 * Zaque Neves - 01529166
+
+## 2023-10-30 - Apresentação
+
+* Tudo ok e lindo!

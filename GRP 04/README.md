@@ -6,3 +6,7 @@
 ## Apresentação - 2023-10-23
 
 * Ninguém
+
+## 2023-10-30 - Apresentação
+
+* Tudo ok, tudo lindo!
