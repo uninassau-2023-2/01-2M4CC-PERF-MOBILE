@@ -1,0 +1,3 @@
+[submodule "GRP 03/pokemonApp"]
+	path = GRP 03/pokemonApp
+	url = https://github.com/lucasadsr/pokemonApp.git
