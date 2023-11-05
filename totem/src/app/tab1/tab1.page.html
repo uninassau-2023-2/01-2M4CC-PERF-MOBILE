@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Cliente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-input readonly="true" label="Senha Gerada: " value="{{inputNovaSenha}}"></ion-input>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-button expand="full" class="custom-button1" (click)="gerarSenhaGeral()">Senha Geral</ion-button>
+    <ion-button expand="full" class="custom-button2" (click)="gerarSenhaPrioritaria()">Senha Prioritária</ion-button>
+    <ion-button expand="full" class="custom-button3" (click)="gerarSenhaExame()">Senha Exame</ion-button>
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-header>
+    <ion-label>Senhas Chamadas</ion-label>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let senha of senhasService.senhasChamadas">
+        {{ senha }}
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

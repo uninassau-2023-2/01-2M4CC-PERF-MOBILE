@@ -1,7 +1,0 @@
-{
-  "name": "totem",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular"
-}
