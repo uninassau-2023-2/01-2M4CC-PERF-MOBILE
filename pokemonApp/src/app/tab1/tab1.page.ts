@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PokeAPIService } from '../services/poke-api.service';
 import { ViaCEPService } from '../services/via-cep.service';
+import { BattleService } from '../services/battle.service';
 
 @Component({
   selector: 'app-tab1',
@@ -25,9 +26,7 @@ export class Tab1Page {
   pokemon: any = { abilities: [] };
 
   constructor(
-    private pokeAPIService: PokeAPIService,
-    private viaCEPService: ViaCEPService
-  ) { }
+    private pokeAPIService: PokeAPIService, private viaCEPService: ViaCEPService, private battleService: BattleService) { }
 
   buscarPokemon() {
     this.viaCEPService.getViaCEPService(this.areaBuscarPokemon)
@@ -43,12 +42,15 @@ export class Tab1Page {
       .subscribe((pokemon) => {
         this.pokemon = pokemon;
         this.atualizarDadosPokemon();
+        
+        this.pokemonAbilitiesCount = this.pokemon.abilities.length;
+        this.battleService.setPokemon1AbilitiesCount(this.pokemonAbilitiesCount);
       });
   }
 
   atualizarDadosPokemon() {
     this.pokemonName = this.pokemon.name.toUpperCase();
-    this.pokemonImageUrl = this.pokemon.sprites.other.dream_world.front_default;
+    this.pokemonImageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.randomPokemonId}.svg`;
     this.pokemonAbilitiesCount = this.pokemon.abilities.length;
     this.pokemonHeight = this.pokemon.height;
     this.pokemonWeight = this.pokemon.weight;

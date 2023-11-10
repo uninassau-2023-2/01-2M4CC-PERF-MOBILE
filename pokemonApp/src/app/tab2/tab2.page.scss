@@ -1,0 +1,14 @@
+ion-card-title {
+    &.empate {
+      color: yellow;
+    }
+  
+    &.ganhou {
+      color: red;
+    }
+  
+    &.perdeu {
+      color: green;
+    }
+  }
+  
