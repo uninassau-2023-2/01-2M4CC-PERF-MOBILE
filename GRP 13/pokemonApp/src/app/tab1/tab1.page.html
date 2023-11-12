@@ -5,12 +5,6 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Buscar Pokémon</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <ion-card>
     <ion-card-header>
       <ion-input
@@ -40,26 +34,37 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card *ngIf="this.pokemon.nome">
+  <ion-card *ngIf="this.pokemonDataService.pokemon1.nome">
     <ion-card-header>
-      <ion-card-title>{{this.pokemon.nome | uppercase}}</ion-card-title>
-      <ion-img alt="{{this.pokemon.nome}} img" src="{{this.pokemon.sprites}}">
-      </ion-img>
+      <ion-card-title>
+        {{this.pokemonDataService.pokemon1.nome | uppercase}}
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content>
+      <ion-img
+        alt="{{this.pokemonDataService.pokemon1.nome}} img"
+        src="{{this.pokemonDataService.pokemon1.sprites}}"
+      >
+      </ion-img>
       <ion-list>
         <ion-item>
-          <ion-label> Habilidades: {{this.pokemon.habilidades}} </ion-label>
+          <ion-label>
+            Habilidades: {{this.pokemonDataService.pokemon1.habilidades}}
+          </ion-label>
         </ion-item>
       </ion-list>
       <ion-list>
         <ion-item>
-          <ion-label> Altura: {{this.pokemon.altura}} </ion-label>
+          <ion-label>
+            Altura: {{this.pokemonDataService.pokemon1.altura}} m
+          </ion-label>
         </ion-item>
       </ion-list>
       <ion-list>
         <ion-item>
-          <ion-label> Peso: {{this.pokemon.peso}} </ion-label>
+          <ion-label>
+            Peso: {{this.pokemonDataService.pokemon1.peso}} kg
+          </ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

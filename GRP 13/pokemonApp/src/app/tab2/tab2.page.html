@@ -1,13 +1,55 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Tab 2 </ion-title>
+    <ion-title> Batalha Pokémon </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card *ngIf="this.pokemonDataService.pokemon2.nome">
+    <ion-card-header>
+      <ion-card-title>
+        {{this.pokemonDataService.pokemon2.nome | uppercase}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title
+        *ngIf="this.pokemonDataService.pokemon1.nome"
+        [ngStyle]="{'color': getColor()}"
+      >
+        {{getResultado()}}
+      </ion-card-title>
+      <ion-img
+        alt="{{this.pokemonDataService.pokemon2.nome}} img"
+        src="{{this.pokemonDataService.pokemon2.sprites}}"
+      >
+      </ion-img>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Habilidades: {{this.pokemonDataService.pokemon2.habilidades}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Altura: {{this.pokemonDataService.pokemon2.altura}} m
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Peso: {{this.pokemonDataService.pokemon2.peso}} kg
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
