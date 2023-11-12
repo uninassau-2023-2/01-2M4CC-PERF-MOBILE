@@ -8,26 +8,27 @@ import { ViaCEPService } from '../services/via-cep.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-areaBuscarPokemon: string = '52011210';
-areaBusca: any = {
-  bairro: '',
-  localidade: '',
-  logradouro: '',
-  uf: ''
-};
-sla: string[] = []
-pokemon: any = {
-  nome: '',
-  img: '',
-  habilidade: '',
-  altura: '',
-  peso: ''
-}
+  areaBuscarPokemon: string = '52011210';
+  areaBusca: any = {
+    bairro: '',
+    localidade: '',
+    logradouro: '',
+    uf: ''
+  };
+
+  pokemon: any = {
+    nome: '',
+    img: '',
+    habilidade: '',
+    altura: '',
+    peso: ''
+  }
 
   constructor(
     private pokeAPIService: PokeAPIService,
-    private ViaCEPService: ViaCEPService
+    private ViaCEPService: ViaCEPService,
   ) {}
+
 
   buscarPokemon(){
     this.ViaCEPService.getViaCEPService(this.areaBuscarPokemon).subscribe((value) => {
@@ -44,6 +45,9 @@ pokemon: any = {
       this.pokemon.altura = JSON.parse(JSON.stringify(value)) ['height'];
       this.pokemon.peso = JSON.parse(JSON.stringify(value)) ['weight'];
     });
+
+    this.pokeAPIService.setTab1Habilidade(parseInt(this.pokemon.habilidade));
+
   }
 
 }
