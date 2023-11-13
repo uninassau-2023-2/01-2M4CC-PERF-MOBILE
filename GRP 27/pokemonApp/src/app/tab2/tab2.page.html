@@ -1,17 +1,23 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="addPhotoToGallery()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-content>
+    <ion-card class="pokemon-card">
+      <div *ngIf="randomPokemon">
+        <h2 style="text-transform: uppercase; color: rgb(19, 19, 82);">{{ randomPokemon.name }}</h2>
+        <p [ngClass]="resultClass" style="text-align: center;">{{ result }}</p>
+        <img [src]="randomPokemon.image" alt="{{ randomPokemon.name }}">
+      
+      <p>Abilities: {{ randomPokemon.abilities }} </p>
+      <p>Height: {{ randomPokemon.height }} </p>
+      <p>Weight: {{ randomPokemon.weight }} </p>
+    </div>
+  </ion-card>
+  </ion-content>
+  
+  
 </ion-content>

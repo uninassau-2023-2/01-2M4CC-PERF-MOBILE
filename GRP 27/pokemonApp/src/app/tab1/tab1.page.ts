@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { PokeAPIService } from './../services/poke-api.service';
 import { ViaCEPService } from './../services/via-cep.service';
 import axios from 'axios';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-tab1',
@@ -26,7 +27,8 @@ export class Tab1Page {
 	
 	constructor(
 		private pokeAPIService: PokeAPIService,
-		private viaCEPService: ViaCEPService
+		private viaCEPService: ViaCEPService,
+		private router: Router
 	) { }
 	buscarPokemon() {
 		this.viaCEPService.getViaCEPService(this.areaBuscarPokemon)
@@ -50,6 +52,8 @@ export class Tab1Page {
 			this.pokemonvalue.abilities = pokemonData.abilities.length; // Converte o array em uma string
 			this.pokemonvalue.height = JSON.stringify(pokemonData.height);
 			this.pokemonvalue.weight = JSON.stringify(pokemonData.weight);
+
+			this.router.navigate(['/tabs/tab2', { abilities: this.pokemonvalue.abilities }]);
 		});
 	}
 }
