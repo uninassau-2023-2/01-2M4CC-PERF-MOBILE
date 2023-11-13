@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PokeAPIService } from '../services/poke-api.service';
 import { ViaCEPService } from '../services/via-cep.service';
-
+import { SonhoService } from '../services/sonho.service';
 interface procurarPokemon {
   name: string;
   abilities: any[];
@@ -38,7 +38,8 @@ export class Tab1Page {
 
   constructor(
     private pokeAPIService: PokeAPIService,
-    private viaCEPService: ViaCEPService
+    private viaCEPService: ViaCEPService,
+    private SonhoService: SonhoService
   ) {}
   buscarPokemon() {
     this.viaCEPService.getViaCEPService(this.areaBuscarPokemon)
@@ -52,9 +53,12 @@ export class Tab1Page {
         .subscribe((value: any) => {
           this.acharPokemon.name = value.name;
           this.acharPokemon.sprites = value.sprites;
-          this.acharPokemon.abilities = value.abilities.map((ability: any) => ability.ability.name);
+          this.acharPokemon.abilities = value.abilities.map((ability: any) => ability.ability.name)
           this.acharPokemon.height = value.height;
+          this.SonhoService.setAbilities((this.acharPokemon.abilities).length)
           this.acharPokemon.weight = value.weight;
         });
+        
   } 
+  
 }
