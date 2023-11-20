@@ -1,0 +1,40 @@
+/* Estilo padrão para o resultado */
+.result-text {
+    font-size: 30px;
+    font-weight: bold;
+    float: right;
+    text-transform: uppercase;
+  }
+  
+  /* Estilo para Empate (amarelo) */
+  .yellow-text {
+    color: yellow;
+    font-size: 30px;
+  }
+  
+  /* Estilo para Ganhou (vermelho) */
+  .red-text {
+    color: red;
+    font-size: 30px;
+  }
+  
+  /* Estilo para Perdeu (verde) */
+  .green-text {
+    color: green;
+    font-size: 30px;
+  }
+  .h2{
+    
+    color:rgb(129, 29, 29);
+  }
+
+  .pokemon-card {
+    max-width: 300px; 
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #ccc; 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
