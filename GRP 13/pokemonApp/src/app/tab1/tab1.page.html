@@ -1,0 +1,72 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Buscar Pokémon</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-input
+        [(ngModel)]="areaBuscarPokemon"
+        [counter]="true"
+        fill="solid"
+        helperText="Área pra buscar por Pokémon"
+        label-placement="floating"
+        label="CEP"
+        maxlength="8"
+        placeholder="22555888"
+        type="text"
+      ></ion-input>
+      <ion-button expand="block" fill="solid" (click)="buscarPokemon()">
+        Buscar por Pokémon
+        <ion-icon name="search" slot="end"></ion-icon>
+      </ion-button>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          {{ this.areaBusca.logradouro ? this.areaBusca.logradouro + ', ' +
+          this.areaBusca.bairro + ', ' + this.areaBusca.localidade + ' - ' +
+          this.areaBusca.uf : null}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="this.pokemonDataService.pokemon1.nome">
+    <ion-card-header>
+      <ion-card-title>
+        {{this.pokemonDataService.pokemon1.nome | uppercase}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-img
+        alt="{{this.pokemonDataService.pokemon1.nome}} img"
+        src="{{this.pokemonDataService.pokemon1.sprites}}"
+      >
+      </ion-img>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Habilidades: {{this.pokemonDataService.pokemon1.habilidades}}
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Altura: {{this.pokemonDataService.pokemon1.altura}} m
+          </ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            Peso: {{this.pokemonDataService.pokemon1.peso}} kg
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
