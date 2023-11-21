@@ -7,6 +7,11 @@
 * Pedro Henrique Vieira Malheiros- 01456022
 * Rafael Schettini Fernandes Rodrigues - 01528619
 
+## 2023-11-21
+
+* Projeto não foi enviado via pull request
+* Feito parcialmente até lista 5
+
 ## Apresentaçao - 2023-10-23
 
 * Lucas Araújo de Sá RIbeiro - 01556186

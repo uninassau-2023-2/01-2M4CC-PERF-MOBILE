@@ -7,6 +7,10 @@
 * Lucas Souza Pereira - 01224070;
 * Pedro Henrique Félix da Fonseca - 01528288
 
+## 2023-11-21
+
+* Desenvolvido parcialmente até a lista 6
+
 ## Apresentação - 2023-10-16
 
 * Grupo já realizou apresentação
