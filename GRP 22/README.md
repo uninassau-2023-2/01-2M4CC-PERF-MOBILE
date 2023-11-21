@@ -7,6 +7,10 @@
 * Rhauana Lima - 01508064
 * Vinicius Nascimento - 01534963
 
+## 2023-11-21
+
+* Código enviado como submódulo, não foi possível avaliar.
+
 ## Apresentação - 2023-10-23
 
 * Luiz Felipe Sá - 01532557
