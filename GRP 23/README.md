@@ -7,6 +7,10 @@
 * Marcos Antônio Ferreira Guimarães - 01405752
 * Pedro Augusto Cardoso Silva - 0143875
 
+## 2023-11-21
+
+* Envio com muitos conflitos no github, pull request rejeitado
+
 ## Apresentação - 2023-10-23
 
 * Gabriel Barbosa de Souza Barros - 01566611
