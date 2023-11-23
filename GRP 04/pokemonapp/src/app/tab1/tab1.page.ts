@@ -3,6 +3,8 @@ import { PokeApiService } from '../services/poke-api.service';
 import { ViacepService } from '../services/viacep.service';
 
 interface procurarPokemon {
+  name: string;
+  abilities: any[];
   sprites: {
     front_default: string;
   };
@@ -27,6 +29,8 @@ export class Tab1Page {
   
   BuscaPokemon : procurarPokemon =
   {
+    name: '',
+    abilities: [],
     sprites: 
     {
       front_default: ''
@@ -49,7 +53,9 @@ export class Tab1Page {
       this.areaBusca.uf = JSON.parse(JSON.stringify(value)) ['uf'];
     });
     this.pokeApiService.getPokeApiService().subscribe((value: any) => {
+      this.BuscaPokemon.name = value.name;
       this.BuscaPokemon.sprites = value.sprites;
+      this.BuscaPokemon.abilities = value.abilities.map((ability: any) => ability.ability.name)
       this.BuscaPokemon.height = value.height;
       this.BuscaPokemon.weight = value.weight;
 
