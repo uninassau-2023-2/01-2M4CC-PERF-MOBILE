@@ -50,19 +50,19 @@
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{'bulbassaur' | uppercase}}</ion-card-title>
-      <ion-img alt='' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"></ion-img>
+      <ion-card-title>{{ 'Pokemon' | uppercase}}</ion-card-title>
+      <ion-img alt='' [src]="BuscaPokemon.sprites.front_default"></ion-img>
     </ion-card-header>
     <ion-card-content>
       <ion-list>
         <ion-item>
-          <ion-label>Abilites : 2</ion-label>
+          <ion-label>Habilidade : Normal </ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Heigth : 7</ion-label>
+          <ion-label>Heigth : {{BuscaPokemon.height}}</ion-label>
         </ion-item>
         <ion-item>
-          <ion-label>Weigth : 69</ion-label>
+          <ion-label>Weigth : {{BuscaPokemon.weight}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>

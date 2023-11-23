@@ -2,6 +2,14 @@ import { Component } from '@angular/core';
 import { PokeApiService } from '../services/poke-api.service';
 import { ViacepService } from '../services/viacep.service';
 
+interface procurarPokemon {
+  sprites: {
+    front_default: string;
+  };
+  height: number;
+  weight: number;
+}
+
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
@@ -15,7 +23,18 @@ export class Tab1Page {
     localidade: '',
     logradouro: '',
     uf: '',
+  };
+  
+  BuscaPokemon : procurarPokemon =
+  {
+    sprites: 
+    {
+      front_default: ''
+    },
+    height: 0,
+    weight: 0,
   }
+  
 
   constructor(
     private pokeApiService : PokeApiService,
@@ -29,8 +48,13 @@ export class Tab1Page {
       this.areaBusca.localidade = JSON.parse(JSON.stringify(value)) ['localidade'];
       this.areaBusca.uf = JSON.parse(JSON.stringify(value)) ['uf'];
     });
-    this.pokeApiService.getPokeApiService();
-  }
+    this.pokeApiService.getPokeApiService().subscribe((value: any) => {
+      this.BuscaPokemon.sprites = value.sprites;
+      this.BuscaPokemon.height = value.height;
+      this.BuscaPokemon.weight = value.weight;
 
+  });
+
+}
 
 }
