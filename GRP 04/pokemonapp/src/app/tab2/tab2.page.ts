@@ -42,7 +42,7 @@ export class Tab2Page {
         
     ) {
         {
-            this.encontrarPokemons(); //Carregar a função ao iniciar a página
+            this.encontrarPokemons(); 
         }
     }
 

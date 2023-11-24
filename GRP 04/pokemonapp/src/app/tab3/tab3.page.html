@@ -17,9 +17,27 @@
   <ion-row>
     <ion-col><ion-card>
       <ion-card-content><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png"></ion-card-content>
+      <ion-item >
+        <ion-label color="success">Vitoria</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="warning">Empate</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger">Derrota</ion-label>
+      </ion-item>
     </ion-card></ion-col>
     <ion-col><ion-card>
-      <ion-card-content><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/82.png"></ion-card-content>
+      <ion-card-content><img [src]="BuscaPokemon.sprites.front_default"></ion-card-content>
+      <ion-item>
+        <ion-label color="success">Vitoria</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="warning">Empate</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label color="danger">Derrota</ion-label>
+      </ion-item>
     </ion-card></ion-col>
   </ion-row>
 </ion-grid>
