@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PokeAPIService } from '../services/poke-api.service';
 import { ViaCEPService } from '../services/via-cep.service';
+import { PokedexService } from '../services/pokedex.service';
 
 @Component({
   selector: 'app-tab1',
@@ -27,6 +28,7 @@ export class Tab1Page {
   constructor(
     private pokeAPIService: PokeAPIService,
     private ViaCEPService: ViaCEPService,
+    private pokedexService: PokedexService,
   ) {}
 
 
@@ -48,6 +50,8 @@ export class Tab1Page {
 
     this.pokeAPIService.setTab1Habilidade(parseInt(this.pokemon.habilidade));
 
+    
+    
   }
 
 }

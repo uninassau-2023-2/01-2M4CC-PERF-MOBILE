@@ -37,7 +37,7 @@ export class Tab2Page {
   }
 
   buscarPokemon(){
-    this.pokeAPIService.getPokeAPIService().subscribe((value) => {
+    this.pokeAPIService.getPokeAPIServiceTab2().subscribe((value) => {
       this.pokemon.nome = JSON.parse(JSON.stringify(value)) ['name'];
       this.pokemon.img = JSON.parse(JSON.stringify(value)) ['id'];
       this.pokemon.habilidade = (JSON.parse(JSON.stringify(value)) ['abilities']).length -1;
