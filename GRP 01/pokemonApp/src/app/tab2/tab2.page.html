@@ -15,6 +15,14 @@
 
   <ion-card>
     <ion-card-header>
+      <ion-button
+        expand="block"
+        fill="solid"
+        (click)="encontrarPokemons()"
+      >
+        Buscar por Pokemon
+      <ion-icon name="search" slot="end"></ion-icon>
+    </ion-button>
       <ion-card-title [ngStyle]="corTexto">{{ acharPokemon.name | uppercase }}</ion-card-title>
       <ion-label *ngIf="resultadoMensagem">{{ resultadoMensagem }}</ion-label>
       <ion-img alt=''
