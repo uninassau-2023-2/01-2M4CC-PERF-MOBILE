@@ -29,16 +29,9 @@ export class Tab3Page {
     private dadosService: DadosService
   ) {
     this.OnOK()
-    this.OnInit()
-  }
-  
-
-  OnInit() {
     
-
   }
-
-  OnOK() {
+    OnOK() {
       this.usaCor('green', 'red', 'yellow');
   }
   usaCor(color: string, cor: string, cores: string) {
