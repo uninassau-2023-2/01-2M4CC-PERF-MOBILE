@@ -1,3 +1,4 @@
+// tab2.page.ts
 import { Component, OnInit } from '@angular/core';
 import { BattleService } from '../services/battle.service';
 import { PhotoService } from '../services/photo.service';
@@ -24,7 +25,11 @@ export class Tab2Page implements OnInit {
   ngOnInit() {
     this.mudarPokemon();
   }
-    
+
+  atualizarPokemon(nome: string) {
+    this.pokemonName = nome;
+  }
+
   realizarBatalha() {
     this.battleResult = this.battleService.determineBattleResult();
   
@@ -35,13 +40,15 @@ export class Tab2Page implements OnInit {
     } else {
       this.resultadoBatalha = 'Empate';
     }
+
+    this.battleService.updateBattleResult(this.battleResult);
   }
 
   mudarPokemon() {
     this.displayRandomPokemon();
   }
 
-  addPhotoToGallery() {
+  abrirCamera() {
     this.photoService.addNewToGallery();
   }
 
