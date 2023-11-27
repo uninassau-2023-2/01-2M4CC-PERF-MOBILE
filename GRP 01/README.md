@@ -7,6 +7,11 @@
 * Lucas Souza Pereira - 01224070;
 * Pedro Henrique Félix da Fonseca - 01528288
 
+## 2023-11-27
+
+* Desenvolvido até a lista 7.
+* Parabéns!
+
 ## 2023-11-21
 
 * Desenvolvido parcialmente até a lista 6
