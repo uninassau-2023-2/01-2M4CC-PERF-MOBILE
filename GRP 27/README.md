@@ -7,6 +7,10 @@
 * Tássyo Platini de Souza Gonçalves - 01516372
 * Vitor Passos do Rêgo - 01538874
 
+## 2023-11-27
+
+* Desenvolvido até a lista 6
+
 ## Apresentação - 2023-10-16
 
 * Tássyo Platini de Souza Gonçalves - 01516372
