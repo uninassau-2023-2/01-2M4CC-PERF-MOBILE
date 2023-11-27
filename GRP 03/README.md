@@ -7,6 +7,10 @@
 * Pedro Henrique Vieira Malheiros- 01456022
 * Rafael Schettini Fernandes Rodrigues - 01528619
 
+## 2023-11-27
+
+* Desenvolvido até a lista 6
+
 ## 2023-11-21
 
 * Projeto não foi enviado via pull request
