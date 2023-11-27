@@ -7,6 +7,10 @@
 * Marcos Antônio Ferreira Guimarães - 01405752
 * Pedro Augusto Cardoso Silva - 0143875
 
+## 2023-11-27
+
+* Conflito com github, irão enviar novamente
+
 ## 2023-11-21
 
 * Envio com muitos conflitos no github, pull request rejeitado

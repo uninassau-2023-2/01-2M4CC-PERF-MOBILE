@@ -1,0 +1,8 @@
+{
+  "name": "pokemonApp",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

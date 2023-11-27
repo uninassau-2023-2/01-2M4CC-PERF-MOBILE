@@ -7,6 +7,10 @@
 * Rhauana Lima - 01508064
 * Vinicius Nascimento - 01534963
 
+## 2023-11-27
+
+* Desenvolvido parcialmente até lista 7
+
 ## 2023-11-21
 
 * Código enviado como submódulo, não foi possível avaliar.
