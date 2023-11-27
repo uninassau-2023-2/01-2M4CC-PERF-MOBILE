@@ -7,6 +7,10 @@
 * Gustavo kauan Araujo de melo - 01554652
 * João Victor Gonçalves Cavalcanti - 01516742
 
+## 2023-11-27
+
+* Desenvolvido até lista 7
+
 ## Apresentação - 2023-10-23
 
 * Elisa Maria da Silva - 01523290
