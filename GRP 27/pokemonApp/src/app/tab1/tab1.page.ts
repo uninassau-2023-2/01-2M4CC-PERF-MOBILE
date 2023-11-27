@@ -1,59 +1,64 @@
-import { Component } from '@angular/core';
-import { PokeAPIService } from './../services/poke-api.service';
-import { ViaCEPService } from './../services/via-cep.service';
-import axios from 'axios';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { PokeApiService } from '../services/poke-api.service';
+import { ViaCEPService } from '../services/via-cep.service';
 
 @Component({
-	selector: 'app-tab1',
-	templateUrl: 'tab1.page.html',
-	styleUrls: ['tab1.page.scss'],
+  selector: 'app-tab1',
+  templateUrl: 'tab1.page.html',
+  styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
-	areaBuscarPokemon: string = '52011210';
-	areaBusca: any = {
-		bairro: ' ',
-		localidade: '',
-		logradouro: ' ',
-		uf: ''
-	};
-	pokemonvalue: any = {
-		name: '',
-		image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/',
-		abilities: '',
-		height: '',
-		weight: ''
-	};
-	
-	constructor(
-		private pokeAPIService: PokeAPIService,
-		private viaCEPService: ViaCEPService,
-		private router: Router
-	) { }
-	buscarPokemon() {
-		this.viaCEPService.getViaCEPService(this.areaBuscarPokemon)
-			.subscribe((value) => {
-				this.areaBusca.logradouro = JSON.parse(JSON.stringify(value))['logradouro'];
-				this.areaBusca.bairro = ', ' + JSON.parse(JSON.stringify(value))["bairro"];
-				this.areaBusca.localidade = ' - ' + JSON.parse(JSON.stringify(value))['localidade'];
-				this.areaBusca.uf = '-' + JSON.parse(JSON.stringify(value))['uf'];
 
+export class Tab1Page{
+  areaBuscarPokemon:string='52011210';
+  areaBusca:any={
+    bairro : '',
+    localidade : '',
+    logradouro : '',
+    uf:''
+  };
+  public pokemon:any={
+    name:'',
+    image:'',
+    abilities:'',
+    height:'',
+    weight:''
 
-			});
-			
-			
+  }
 
-		const randomPokemonID = Math.floor(Math.random() * 100) + 1;
-		const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${randomPokemonID}.svg`;
-		this.pokeAPIService.getPokeAPIService(randomPokemonID).subscribe((value) => {
-			const pokemonData = JSON.parse(JSON.stringify(value));
-			this.pokemonvalue.name = pokemonData.name;
-			this.pokemonvalue.image = imageUrl;
-			this.pokemonvalue.abilities = pokemonData.abilities.length; // Converte o array em uma string
-			this.pokemonvalue.height = JSON.stringify(pokemonData.height);
-			this.pokemonvalue.weight = JSON.stringify(pokemonData.weight);
+  constructor(
+    private pokeApiService:PokeApiService,
+    private viaCEPService:ViaCEPService
+  ){}
 
-			this.router.navigate(['/tabs/tab2', { abilities: this.pokemonvalue.abilities }]);
-		});
-	}
+  buscarPokemon(areaBuscarPokemon:string){
+    this.viaCEPService.getViaCEPService(areaBuscarPokemon)
+      .subscribe((value)=>{
+        this.areaBusca.logradouro = JSON.parse(JSON.stringify(value))['logradouro'];
+        this.areaBusca.bairro = ', '+JSON.parse(JSON.stringify(value))['bairro'];
+        this.areaBusca.localidade = ' - '+JSON.parse(JSON.stringify(value))['localidade'];
+        this.areaBusca.uf = '-'+JSON.parse(JSON.stringify(value))['uf'];
+      });
+      this.pokeApiService.getPokeApiService()
+      .subscribe((value)=>{
+        this.pokemon.weight = JSON.parse(JSON.stringify(value))['weight'];
+        this.pokemon.name = JSON.parse(JSON.stringify(value))['name'];
+        this.pokemon.height = JSON.parse(JSON.stringify(value))['height'];
+        this.pokemon.abilities = JSON.parse(JSON.stringify(value))['abilities'].length;
+        this.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
+        this.pokeApiService.pokemon.name = JSON.parse(JSON.stringify(value))['name'];
+        this.pokeApiService.pokemon.image = JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default;
+        //
+        this.pokeApiService.lastPokemonAbility = this.pokemon.abilities;
+        this.pokeApiService.pokemon.vitorias = 0
+        this.pokeApiService.pokemon.derrotas = 0
+        this.pokeApiService.pokemon.empates = 0
+        this.pokeApiService.pokemons.push({
+          name:JSON.parse(JSON.stringify(value))['name'],
+          image:JSON.parse(JSON.stringify(value))['sprites'].other.dream_world.front_default,
+          vitorias:0,
+          empates:0,
+          derrotas:0
+        })
+      });
+  }
 }
