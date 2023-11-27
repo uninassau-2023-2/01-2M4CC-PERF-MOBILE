@@ -9,6 +9,11 @@
 * Rodin Sarmento - 01507133
 * Zaque Neves - 01529166
 
+## 2023-11-27
+
+* Desenvolvido até a lista 7
+* Tudo lindo!
+
 ## 2023-10-30 - Apresentação
 
 * Tudo ok e lindo!
