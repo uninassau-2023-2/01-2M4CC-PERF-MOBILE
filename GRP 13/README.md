@@ -7,6 +7,10 @@
 * Pedro São Paulo da Silva Santos - 01503728
 * Victor Silva Dutra de Amorim - 01515499
 
+## 2023-11-27
+
+* Desenvolvido até a lista 7
+
 ## Apresentação - 2023-10-23
 
 * Victor Silva Dutra de Amorim - 01515499
