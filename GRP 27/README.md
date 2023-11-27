@@ -9,7 +9,7 @@
 
 ## 2023-11-27
 
-* Desenvolvido até a lista 6
+* Desenvolvido até a lista 7
 
 ## Apresentação - 2023-10-16
 
