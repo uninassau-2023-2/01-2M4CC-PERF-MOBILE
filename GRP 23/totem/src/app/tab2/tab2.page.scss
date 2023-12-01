@@ -1,0 +1,46 @@
+.conteudo1{
+        text-align: center;
+
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+      }
+
+#present-alert{
+    text-decoration: none;
+}
+
+.conteudo3{
+  margin: auto;
+  text-align: center;
+}
+
+.img-item{
+  padding: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+  max-width: 150px;
+  transition-duration: 500ms;
+}
+
+ion-card {
+  margin: auto;
+  max-width: 350px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+ion-card:hover {
+  transform: scale(1.03);
+}
+
+ion-thumbnail {
+  text-align: center;
+  padding-top: 20px;
+}
+
+p{
+    text-align: center;
+}

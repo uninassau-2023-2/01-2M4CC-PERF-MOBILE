@@ -1,0 +1,16 @@
+ion-card-title {
+    &.empate {
+      color: yellow;
+    }
+  
+    &.ganhou {
+      color: red;
+    }
+  
+    &.perdeu {
+      color: green;
+    }
+  }
+  ion-button {
+    --ion-color-primary: rgb(146, 11, 11);
+  }

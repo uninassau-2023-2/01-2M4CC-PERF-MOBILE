@@ -1,8 +1,9 @@
+<ion-content>
 <ion-card color="primary">
-  <ion-card-header> 
-    <ion-title>
+  <ion-card-header>
+    <ion-card-title>
       Projeto 1 - Mobile
-    </ion-title>
+    </ion-card-title>
   </ion-card-header>
 </ion-card>
 <ion-card>
@@ -39,3 +40,17 @@
     </ion-alert>
   </ion-card-content>
 </ion-card>
+
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>Senha Geral: {{senhasService.senhasGeral}}</ion-item>
+      <ion-item>Senha Prior: {{senhasService.senhasPrior}}</ion-item>
+      <ion-item>Senha Exame: {{senhasService.senhasExame}}</ion-item>
+      <ion-item>Senhas Total: {{senhasService.senhasTotal}}</ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+</ion-content>
