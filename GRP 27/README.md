@@ -6,3 +6,4 @@
 * Jordão Antonio de Moura - 01567032
 * Paulo César Cadena - 01563936
 * Vitor Passos do Rêgo - 01538874
+* Darllan Matos da Silva - 01530533
