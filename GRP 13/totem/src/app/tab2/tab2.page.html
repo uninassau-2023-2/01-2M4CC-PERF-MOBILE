@@ -1,0 +1,43 @@
+<app-header></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Chamada de Senhas</ion-card-title>
+      <ion-card-subtitle>
+        Por favor, solicite a senha subsequente com base na prioridade
+        estabelecida.
+      </ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-grid>
+        <ion-col>
+          <ion-row class="ion-justify-content-center">
+            <ion-input
+              class="senha"
+              fill="outline"
+              readonly="true"
+              value="{{senhaChamada}}"
+            >
+            </ion-input>
+          </ion-row>
+          <ion-row class="ion-justify-content-center"
+            ><ion-button
+              shape="round"
+              expand="block"
+              (click)="chamarProximaSenhaPrioridade()"
+            >
+              <ion-icon
+                class="button-icon"
+                name="megaphone"
+                aria-hidden="true"
+              ></ion-icon>
+              Chamar
+            </ion-button>
+          </ion-row>
+        </ion-col>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

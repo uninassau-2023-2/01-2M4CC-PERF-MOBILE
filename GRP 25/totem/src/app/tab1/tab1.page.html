@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      Senhas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card style="margin-left: 25px; margin-right: 25px;">
+    <ion-card-header>
+      <ion-label class="title-card">Solicitação de Senhas</ion-label>
+    </ion-card-header>
+    <ion-card-content style="text-align: center;">
+      <ion-button (click)="senhasService.novaSenha('SG')">Senha Geral</ion-button>
+      <ion-button (click)="senhasService.novaSenha('SP')">Senha Prioritária</ion-button>
+      <ion-button (click)="senhasService.novaSenha('SE')">Senha Exame</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin: 25px;">
+    <ion-card-header style="margin-bottom: 15px;">
+      <ion-label class="title-card">Senhas Criada:</ion-label>
+    </ion-card-header>
+    <ion-card-content style="text-align: center;">
+      {{senhasService.senhas[senhasService.senhas.length - 1]?.nome}}
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

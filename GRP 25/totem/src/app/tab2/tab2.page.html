@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="title">
+      Atendente
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 3</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card style="margin-left: 25px; margin-right: 25px;">
+    <ion-card-header>
+      <ion-label style="text-align: center; font-weight: bold;">Chamada de Senhas</ion-label>
+    </ion-card-header>
+    <ion-card-content style="text-align: center;">
+      <ion-button (click)="senhasService.chamarSenha()">Chamar senha</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card style="margin: 25px;">
+    <ion-card-header style="margin-bottom: 15px;">
+      <ion-label style="text-align: center; font-weight: bolder;">Últimas Senhas Chamadas:</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>{{senhasService.senhasChamadas[0]}}</ion-item>
+        <ion-item>{{senhasService.senhasChamadas[1]}}</ion-item>
+        <ion-item>{{senhasService.senhasChamadas[2]}}</ion-item>
+        <ion-item>{{senhasService.senhasChamadas[3]}}</ion-item>
+        <ion-item>{{senhasService.senhasChamadas[4]}}</ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      ATENDENTE
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card-content>
+
+    <ion-list style="height: 80px;">
+      <ion-label>
+        SENHA ATUAL:
+      </ion-label>
+      <ion-item *ngFor="let senha of todasAsSenhas.slice().reverse(); let i = index">
+        <ion-label style="font-weight: bold;">
+          Senha: {{ senha.slice(-4) }} - Guichê {{ obterNumero() }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+
+  <ion-card-content>
+
+    <ion-list style="height: 223px;">
+      <ion-label>
+        SENHAS CHAMADAS:
+      </ion-label>
+      <ion-item *ngFor="let senha of todasAsSenhas.slice().reverse(); let i = index">
+        <ion-label>
+          Senha: {{ senha.slice(-4) }}
+        </ion-label>
+      </ion-item>
+    </ion-list>
+
+  </ion-card-content>
+</ion-content>
