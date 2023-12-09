@@ -22,6 +22,7 @@ find . -mindepth 2 -name '.git' -type d -print0 | xargs -0 -n1 bash -c 'rm -rf "
 ## Envio final
 
 ```bash
+find . -print | sort | while read filename; do touch "$filename"; done
 git add .
 git commit -m "Envio final, fechando o repositório."
 git push origin main
