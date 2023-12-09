@@ -1,5 +1,6 @@
 # Alunos
 
+* Darllan Matos da Silva - 01530533
 * Jordão Antonio de Moura - 01567032
 * Levi Souza Alves - 01529075
 * Paulo César Cadena - 01563936
