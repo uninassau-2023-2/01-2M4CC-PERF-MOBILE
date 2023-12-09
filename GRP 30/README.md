@@ -5,6 +5,11 @@
 * Pedro Henrique Feitosa da Silva - 01516541
 * Thiago Pininga Tavares - 01525716
 
+## 2023-12n-09
+
+* Funciona apenas a tab1
+* Desenvolvido parcialmente até a lista 5
+
 ## Apresentação - 2023-10-23
 
 * Marcos Duarte Vieira da Silva - 01524163

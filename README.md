@@ -5,8 +5,10 @@
 Funciona apenas no linux:
 
 ```bash
+find . -type d -name '.angular' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
 find . -type d -name '.vscode' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
 find . -type d -name 'android' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
+find . -type d -name 'node_modules' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
 find . -type d -name 'gradle' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
 find . -type d -name 'resources' -print0 | xargs -0 -n1 bash -c 'rm -rf "$0"'
 ```
